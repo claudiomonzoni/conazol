@@ -379,7 +379,7 @@ button {
 
 #athetefood #walker {
   width: 100%;
-  background: url(/img/workerBg.jpg) no-repeat;
+  background: url(img/workerBg.jpg) no-repeat;
   background-size: 100% auto;
   background-position: center 70%;
   display: -webkit-box;
@@ -747,7 +747,9 @@ button {
   text-align: center;
 }
 
-#wherebuy h2, #wherebuy ul, #wherebuy img {
+#wherebuy h2,
+#wherebuy ul,
+#wherebuy img {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2 / span 1;

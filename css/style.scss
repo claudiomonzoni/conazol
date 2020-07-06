@@ -333,7 +333,7 @@ button {
   }
   #walker {
     width: 100%;
-    background: url(/img/workerBg.jpg) no-repeat;
+    background: url(img/workerBg.jpg) no-repeat;
     background-size: 100% auto;
     background-position: center 70%;
     display: flex;
@@ -591,28 +591,29 @@ button {
   }
 }
 
-#wherebuy{
+#wherebuy {
   background: rgb(255, 226, 104);
-  background:
-    radial-gradient(
-      circle,
-      rgba(255, 226, 104, 1) 25%,
-      rgba(255, 141, 0, 1) 100%
-    );
+  background: radial-gradient(
+    circle,
+    rgba(255, 226, 104, 1) 25%,
+    rgba(255, 141, 0, 1) 100%
+  );
   text-align: center;
-  h2, ul, img{
+  h2,
+  ul,
+  img {
     grid-column: 2 / span 1;
   }
-  ul{
+  ul {
     display: flex;
     flex-wrap: wrap;
-    li{
+    li {
       flex: 1 1 auto;
       display: inherit;
       justify-content: center;
       align-items: center;
       padding: 1em;
-      img{
+      img {
         width: 80px;
       }
     }
