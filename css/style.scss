@@ -112,6 +112,23 @@ $hd: 1600px;
   }
 }
 
+
+.nocel{
+  display: block;
+}
+.cel{
+  display: none;
+}
+
+
+@include cel{
+  .nocel{
+    display: none;
+  }
+  .cel{
+    display: block;
+  }
+}
 section {
   display: grid;
   grid-template-columns: 10% 1fr 10%;
@@ -277,15 +294,46 @@ button {
     justify-content: start;
     height: 5em;
     .anchor {
+      justify-self: center;
       li {
         border-bottom: solid 1px $naranja;
         border-right: none;
         padding: 1em 0;
       }
     }
+    .social {
+      img {
+        width: 2.5em;
+      }
+    }
   }
   .mainMenuAbierto {
     height: 100vh;
+  }
+}
+
+@include cel {
+  #footer {
+    .mainLogo {
+      margin-top: 2em;
+    }
+    .anchor {
+      flex-direction: row;
+      flex-wrap: wrap;
+      li:first-child {
+        font-size: 0.9em;
+        border-right: none;
+        width: 100%;
+        padding: 3em 2em;
+      }
+    }
+
+    .social {
+      flex: 1 0 auto;
+      img {
+        width: 2.5em;
+      }
+    }
   }
 }
 .active {
@@ -340,6 +388,7 @@ button {
     justify-content: center;
     img {
       width: 60%;
+      height: auto;
     }
     @include cel {
       margin-top: 3em;
@@ -599,6 +648,7 @@ button {
     rgba(255, 141, 0, 1) 100%
   );
   text-align: center;
+  padding: 4em 0;
   h2,
   ul,
   img {
@@ -613,9 +663,231 @@ button {
       justify-content: center;
       align-items: center;
       padding: 1em;
+
       img {
         width: 80px;
+        height: auto;
+      }
+      &:nth-child(3) {
+        img {
+          width: 100px;
+          height: auto;
+        }
+      }
+      &:nth-child(4) {
+        img {
+          width: 110px;
+          height: auto;
+        }
       }
     }
   }
+  img {
+    justify-self: center;
+    width: 50%;
+    height: auto;
+    @include cel {
+      width: auto;
+    }
+  }
+}
+
+#locator {
+  align-items: stretch;
+
+  grid-template-columns: 40% 1fr;
+  @include tableta {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h2 {
+    color: #fff;
+  }
+  #left {
+    background-color: $azul;
+    background: linear-gradient(0deg, $azul 0%, #1697dd 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1em;
+    position: relative;
+  
+    #ui {
+      background-color: #fff;
+      border-radius: 2em 2em 0;
+      width: 370px;
+      @include tableta {
+        width: 300px;
+      }
+
+      margin-bottom: 3em;
+      position: relative;
+
+      #holderinput {
+        position: relative;
+        text-align: center;
+        background-color: $amarillo;
+        background: linear-gradient(
+          0deg,
+          #fdb53e 0%,
+          rgba(255, 226, 104, 1) 100%
+        );
+
+        -webkit-box-shadow: 0px 10px 0px -3px rgba(227, 228, 228, 0.8);
+        -moz-box-shadow: 0px 10px 0px -3px rgba(227, 228, 228, 0.8);
+        box-shadow: 0px 10px 0px -3px rgba(227, 228, 228, 0.8);
+
+        border-radius: 2em;
+        padding: 0.8em;
+      }
+      #arrow{
+        display: none;
+        background-color: $azul;
+        color: #fff;
+        position: absolute;
+        width: 60px;
+        height: 120px;
+        right: -40px;
+        border-radius: 0 30px 30px 0;
+        text-align: right;
+        font-size: 5em;
+        padding-right: 0.1em;
+        cursor: pointer;
+      }
+
+      #holderinputUi {
+        padding: 1em;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+      }
+
+      #address {
+        padding: 1em;
+        overflow-y: scroll;
+        height: 410px;
+        @include hd {
+          height: 60vh;
+        }
+        li {
+          display: flex;
+          justify-content: flex-start;
+          img {
+            align-self: flex-start;
+            height: auto;
+            flex: 1 0 auto;
+            padding: 0.6em;
+          }
+          .txt {
+            flex: 1 1 auto;
+            padding-bottom: 1em;
+            border-bottom: solid 1px $naranja;
+          }
+        }
+      }
+
+      //product
+      #storelocatorProduct {
+        right: -28%;
+        bottom: -15%;
+        position: absolute;
+      }
+      //shadow
+      &:before {
+        content: "";
+        position: absolute;
+        width: 150%;
+        height: 120px;
+        bottom: -60px;
+        @include tableta {
+          bottom: -70px;
+        }
+        right: 0;
+        z-index: 0;
+        background: url(../img/shadowStoreLocator.png) no-repeat;
+        background-size: 100%;
+        background-position: top right;
+        @include cel{
+          display: none;
+        }
+      }
+    }
+  }
+  #map {
+    background-color: #e9e2da;
+    #ask {
+      background-color: #fff;
+      padding: 1.5em;
+      border-radius: 0 2em 2em 0;
+      font-size: 0.8em;
+      width: 60%;
+      border-left: solid $naranja 2px;
+      margin-top: 1em;
+      -webkit-box-shadow: 4px 9px 17px -4px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 4px 9px 17px -4px rgba(0, 0, 0, 0.75);
+      box-shadow: 4px 9px 17px -4px rgba(0, 0, 0, 0.75);
+      @include cel{
+        width: 80%;
+        margin-top: 0;
+      }
+    }
+  }
+  // phone
+  @include cel {
+    grid-template-columns: 1fr;
+    position: relative;
+    #holder{
+      overflow: hidden;
+    }
+    #ui {
+      width: 250px !important;
+      border-radius: 0 2em 2em 0 !important;
+      margin-bottom: none;
+      position: absolute !important;
+      left: 0;
+      top: 40vh;
+    }
+    #holderinput{
+      border-radius: 0 2em 2em 0!important;
+    }
+    #arrow{
+      display: block!important;
+    }
+
+    #address {
+      height: 300px !important;
+      font-size: 0.8em;
+    }
+
+    //product
+    #storelocatorProduct {
+      display: none;
+    }
+  }
+
+  #map {
+    height: 100vh;
+  }
+}
+
+input {
+  border-radius: 1.5em 0 0 1.5em;
+  border: none;
+  padding: 0.8em;
+  width: 100%;
+  margin: 0;
+  &::placeholder {
+    font-weight: bold;
+    text-align: center;
+    color: $azul;
+  }
+}
+button {
+  color: #fff;
+  background-color: $azul;
+  background-color: $amarillo;
+  background: linear-gradient(0deg, $azul 0%, #1697dd 60%);
+  border-radius: 0 1.5em 1.5em 0;
+  margin: 0;
+  font-size: 1.5em;
 }

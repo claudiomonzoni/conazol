@@ -67,6 +67,23 @@ p {
   line-height: 1.6em;
 }
 
+.nocel {
+  display: block;
+}
+
+.cel {
+  display: none;
+}
+
+@media (max-width: 479px) {
+  .nocel {
+    display: none;
+  }
+  .cel {
+    display: block;
+  }
+}
+
 section {
   display: -ms-grid;
   display: grid;
@@ -315,13 +332,48 @@ button {
             justify-content: start;
     height: 5em;
   }
+  #mainNav .anchor {
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
   #mainNav .anchor li {
     border-bottom: solid 1px #ff8d00;
     border-right: none;
     padding: 1em 0;
   }
+  #mainNav .social img {
+    width: 2.5em;
+  }
   .mainMenuAbierto {
     height: 100vh;
+  }
+}
+
+@media (max-width: 479px) {
+  #footer .mainLogo {
+    margin-top: 2em;
+  }
+  #footer .anchor {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #footer .anchor li:first-child {
+    font-size: 0.9em;
+    border-right: none;
+    width: 100%;
+    padding: 3em 2em;
+  }
+  #footer .social {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+  }
+  #footer .social img {
+    width: 2.5em;
   }
 }
 
@@ -392,6 +444,7 @@ button {
 
 #athetefood #walker img {
   width: 60%;
+  height: auto;
 }
 
 @media (max-width: 479px) {
@@ -745,6 +798,7 @@ button {
   background: #ffe268;
   background: radial-gradient(circle, #ffe268 25%, #ff8d00 100%);
   text-align: center;
+  padding: 4em 0;
 }
 
 #wherebuy h2,
@@ -779,5 +833,290 @@ button {
 
 #wherebuy ul li img {
   width: 80px;
+  height: auto;
+}
+
+#wherebuy ul li:nth-child(3) img {
+  width: 100px;
+  height: auto;
+}
+
+#wherebuy ul li:nth-child(4) img {
+  width: 110px;
+  height: auto;
+}
+
+#wherebuy img {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 50%;
+  height: auto;
+}
+
+@media (max-width: 479px) {
+  #wherebuy img {
+    width: auto;
+  }
+}
+
+#locator {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-grid-columns: 40% 1fr;
+      grid-template-columns: 40% 1fr;
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  #locator {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+#locator h2 {
+  color: #fff;
+}
+
+#locator #left {
+  background-color: #016ca4;
+  background: -webkit-gradient(linear, left bottom, left top, from(#016ca4), to(#1697dd));
+  background: linear-gradient(0deg, #016ca4 0%, #1697dd 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 1em;
+  position: relative;
+}
+
+#locator #left #ui {
+  background-color: #fff;
+  border-radius: 2em 2em 0;
+  width: 370px;
+  margin-bottom: 3em;
+  position: relative;
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  #locator #left #ui {
+    width: 300px;
+  }
+}
+
+#locator #left #ui #holderinput {
+  position: relative;
+  text-align: center;
+  background-color: #ffe268;
+  background: -webkit-gradient(linear, left bottom, left top, from(#fdb53e), to(#ffe268));
+  background: linear-gradient(0deg, #fdb53e 0%, #ffe268 100%);
+  -webkit-box-shadow: 0px 10px 0px -3px rgba(227, 228, 228, 0.8);
+  box-shadow: 0px 10px 0px -3px rgba(227, 228, 228, 0.8);
+  border-radius: 2em;
+  padding: 0.8em;
+}
+
+#locator #left #ui #arrow {
+  display: none;
+  background-color: #016ca4;
+  color: #fff;
+  position: absolute;
+  width: 60px;
+  height: 120px;
+  right: -40px;
+  border-radius: 0 30px 30px 0;
+  text-align: right;
+  font-size: 5em;
+  padding-right: 0.1em;
+  cursor: pointer;
+}
+
+#locator #left #ui #holderinputUi {
+  padding: 1em;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#locator #left #ui #address {
+  padding: 1em;
+  overflow-y: scroll;
+  height: 410px;
+}
+
+@media (min-width: 1600px) {
+  #locator #left #ui #address {
+    height: 60vh;
+  }
+}
+
+#locator #left #ui #address li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+#locator #left #ui #address li img {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  height: auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  padding: 0.6em;
+}
+
+#locator #left #ui #address li .txt {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding-bottom: 1em;
+  border-bottom: solid 1px #ff8d00;
+}
+
+#locator #left #ui #storelocatorProduct {
+  right: -28%;
+  bottom: -15%;
+  position: absolute;
+}
+
+#locator #left #ui:before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 120px;
+  bottom: -60px;
+  right: 0;
+  z-index: 0;
+  background: url(../img/shadowStoreLocator.png) no-repeat;
+  background-size: 100%;
+  background-position: top right;
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  #locator #left #ui:before {
+    bottom: -70px;
+  }
+}
+
+@media (max-width: 479px) {
+  #locator #left #ui:before {
+    display: none;
+  }
+}
+
+#locator #map {
+  background-color: #e9e2da;
+}
+
+#locator #map #ask {
+  background-color: #fff;
+  padding: 1.5em;
+  border-radius: 0 2em 2em 0;
+  font-size: 0.8em;
+  width: 60%;
+  border-left: solid #ff8d00 2px;
+  margin-top: 1em;
+  -webkit-box-shadow: 4px 9px 17px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 9px 17px -4px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 479px) {
+  #locator #map #ask {
+    width: 80%;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 479px) {
+  #locator {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    position: relative;
+  }
+  #locator #holder {
+    overflow: hidden;
+  }
+  #locator #ui {
+    width: 250px !important;
+    border-radius: 0 2em 2em 0 !important;
+    margin-bottom: none;
+    position: absolute !important;
+    left: 0;
+    top: 40vh;
+  }
+  #locator #holderinput {
+    border-radius: 0 2em 2em 0 !important;
+  }
+  #locator #arrow {
+    display: block !important;
+  }
+  #locator #address {
+    height: 300px !important;
+    font-size: 0.8em;
+  }
+  #locator #storelocatorProduct {
+    display: none;
+  }
+}
+
+#locator #map {
+  height: 100vh;
+}
+
+input {
+  border-radius: 1.5em 0 0 1.5em;
+  border: none;
+  padding: 0.8em;
+  width: 100%;
+  margin: 0;
+}
+
+input::-webkit-input-placeholder {
+  font-weight: bold;
+  text-align: center;
+  color: #016ca4;
+}
+
+input:-ms-input-placeholder {
+  font-weight: bold;
+  text-align: center;
+  color: #016ca4;
+}
+
+input::-ms-input-placeholder {
+  font-weight: bold;
+  text-align: center;
+  color: #016ca4;
+}
+
+input::placeholder {
+  font-weight: bold;
+  text-align: center;
+  color: #016ca4;
+}
+
+button {
+  color: #fff;
+  background-color: #016ca4;
+  background-color: #ffe268;
+  background: -webkit-gradient(linear, left bottom, left top, from(#016ca4), color-stop(60%, #1697dd));
+  background: linear-gradient(0deg, #016ca4 0%, #1697dd 60%);
+  border-radius: 0 1.5em 1.5em 0;
+  margin: 0;
+  font-size: 1.5em;
 }
 /*# sourceMappingURL=style.css.map */
