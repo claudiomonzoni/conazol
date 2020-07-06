@@ -379,7 +379,7 @@ button {
 
 #athetefood #walker {
   width: 100%;
-  background: url(img/workerBg.jpg) no-repeat;
+  background: url(../img/workerBg.jpg) no-repeat;
   background-size: 100% auto;
   background-position: center 70%;
   display: -webkit-box;
@@ -455,7 +455,7 @@ button {
 
 #freethefoot {
   background: #ffe268;
-  background: url(img/freethefootBg.png) no-repeat, radial-gradient(circle, #ffe268 25%, #ff8d00 100%);
+  background: url(../img/freethefootBg.png) no-repeat, radial-gradient(circle, #ffe268 25%, #ff8d00 100%);
   background-size: 60%, 100%;
   background-position: -18px top, center center;
   text-align: center;
