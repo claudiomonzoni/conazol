@@ -1,7 +1,6 @@
-
 //get menu height
 const menuheight = document.querySelector("#mainNav").offsetHeight;
-document.querySelector("#hero").style.marginTop = `${menuheight}px`
+document.querySelector("#hero").style.marginTop = `${menuheight}px`;
 
 //only phones
 var x = window.matchMedia("(max-width: 479px)");
@@ -36,36 +35,34 @@ function esCell(x) {
   }
 }
 //change active class on scroll
-const links = document.querySelectorAll('#anchor a');
-const sections = document.querySelectorAll('section');
+const links = document.querySelectorAll("#anchor a");
+const sections = document.querySelectorAll("section");
 
 function changeLinkState() {
   let index = sections.length;
-  
-  while(--index && window.scrollY + 50 < sections[index].offsetTop) {
-  }
-  links.forEach((link) => link.classList.remove('active'));
-  links[index].classList.add('active');
+
+  while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+  links.forEach((link) => link.classList.remove("active"));
+  links[index].classList.add("active");
 }
 
 changeLinkState();
-window.addEventListener('scroll', changeLinkState);
+window.addEventListener("scroll", changeLinkState);
 
 // smooth the scroll
 
- 
 for (const link of links) {
   link.addEventListener("click", clickHandler);
 }
- 
+
 function clickHandler(e) {
   e.preventDefault();
   const href = this.getAttribute("href");
   const offsetTop = document.querySelector(href).offsetTop;
- 
+
   scroll({
     top: offsetTop,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 }
 
@@ -87,10 +84,10 @@ const carrusel = new Siema({
 const arrow = document.getElementById("arrow");
 const ui = document.getElementById("ui");
 
-
 const open = true;
 
 arrow.addEventListener("click", (e) => {
+  console.log("hola");
   e.preventDefault();
   ui.classList.remove("openUi");
   ui.classList.remove("closeUi");
@@ -106,4 +103,4 @@ arrow.addEventListener("click", (e) => {
 });
 
 //scroll e
-new WOW().init()
+new WOW().init();
