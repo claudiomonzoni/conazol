@@ -353,6 +353,7 @@ button {
 }
 
 #athetefood {
+  overflow: hidden;
   article,
   blockquote,
   #walker,
@@ -433,6 +434,7 @@ button {
 }
 
 #freethefoot {
+  overflow: hidden;
   background: rgb(255, 226, 104);
   background: url(../img/freethefootBg.png) no-repeat,
     radial-gradient(
@@ -492,6 +494,7 @@ button {
   }
 
   #boxesfreethefoot {
+    
     padding: 2em 0;
     grid-column: 2 / span 1;
     display: grid;
@@ -574,6 +577,7 @@ button {
   }
 }
 .symptoms {
+  overflow: hidden;
   .symptomsB {
     grid-column: 2/-1;
     display: grid;

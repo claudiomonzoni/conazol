@@ -1,3 +1,4 @@
+
 //get menu height
 const menuheight = document.querySelector("#mainNav").offsetHeight;
 document.querySelector("#hero").style.marginTop = `${menuheight}px`
@@ -50,6 +51,24 @@ function changeLinkState() {
 changeLinkState();
 window.addEventListener('scroll', changeLinkState);
 
+// smooth the scroll
+
+ 
+for (const link of links) {
+  link.addEventListener("click", clickHandler);
+}
+ 
+function clickHandler(e) {
+  e.preventDefault();
+  const href = this.getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
+ 
+  scroll({
+    top: offsetTop,
+    behavior: "smooth"
+  });
+}
+
 //carrusel
 
 function cambio() {
@@ -85,3 +104,6 @@ arrow.addEventListener("click", (e) => {
 
   this.open = !this.open;
 });
+
+//scroll e
+new WOW().init()

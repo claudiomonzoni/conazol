@@ -394,6 +394,10 @@ button {
   height: auto;
 }
 
+#athetefood {
+  overflow: hidden;
+}
+
 #athetefood article,
 #athetefood blockquote,
 #athetefood #walker,
@@ -515,6 +519,7 @@ button {
 }
 
 #freethefoot {
+  overflow: hidden;
   background: #ffe268;
   background: url(../img/freethefootBg.png) no-repeat, radial-gradient(circle, #ffe268 25%, #ff8d00 100%);
   background-size: 60%, 100%;
@@ -689,6 +694,10 @@ button {
     background-size: 55%, 100%;
     background-position: -20px -40%, center center;
   }
+}
+
+.symptoms {
+  overflow: hidden;
 }
 
 .symptoms .symptomsB {
