@@ -99,10 +99,11 @@ section {
 }
 
 .menu-toggle {
-  position: absolute;
+  position: fixed;
+  z-index: 999;
   display: none;
-  right: 2vh;
-  top: 2vh;
+  right: 4vh;
+  top: 4vh;
   z-index: 520;
   width: 30px;
   height: 22px;
@@ -211,6 +212,13 @@ button {
 
 .desanimaMenu {
   animation: menuCerrado 1s ease forwards reverse;
+}
+
+#mainNav {
+  position: fixed;
+  top: 0;
+  z-index: 90;
+  width: 100%;
 }
 
 #mainNav,
@@ -1057,6 +1065,46 @@ button {
     position: absolute !important;
     left: 0;
     top: 40vh;
+  }
+  @-webkit-keyframes animaCloseUi {
+    0% {
+      left: 0px;
+    }
+    100% {
+      left: -250px;
+    }
+  }
+  @keyframes animaCloseUi {
+    0% {
+      left: 0px;
+    }
+    100% {
+      left: -250px;
+    }
+  }
+  @-webkit-keyframes animaOpenUi {
+    0% {
+      left: -250px;
+    }
+    100% {
+      left: 0px;
+    }
+  }
+  @keyframes animaOpenUi {
+    0% {
+      left: -250px;
+    }
+    100% {
+      left: 0px;
+    }
+  }
+  #locator .closeUi {
+    -webkit-animation: animaCloseUi 1s ease forwards;
+            animation: animaCloseUi 1s ease forwards;
+  }
+  #locator .openUi {
+    -webkit-animation: animaOpenUi 1s ease forwards;
+            animation: animaOpenUi 1s ease forwards;
   }
   #locator #holderinput {
     border-radius: 0 2em 2em 0 !important;
