@@ -250,6 +250,7 @@ button {
   align-items: center;
   @include cel {
     flex-direction: column;
+    font-size: 0.9em;
   }
   ul {
     display: inherit;
